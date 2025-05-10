@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="/css/relatorio.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   
+    <script>
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Erro ao carregar o sidebar:', error));
+    </script>
+
+
+    <main>
+        <div class="container">
+            <h1>RELATÓRIOS</h1>
+            <div class="filter-section">
+                <input type="date" id="startDate" value="2025-04-01">
+                <span>></span>
+                <input type="date" id="endDate" value="2025-04-20">
+                <button id="filterButton">Filtrar</button>
+            </div>
+            <div class="report-section">
+                <div class="chart-container">
+                    <canvas id="movimentacoesChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="estoqueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/relatorio.js"></script>
+</body>
+</html>

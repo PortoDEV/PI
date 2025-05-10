@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estoque.css">
+    <title>Estoque</title>
+</head>
+<body>
+
+    <script>
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Erro ao carregar o sidebar:', error));
+    </script>
+
+
+    <main>
+        <div class="container">
+            <h1>Controle de Estoque</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="estoque-body">
+
+                </tbody>
+            </table>
+
+            <div class="add-item">
+                <h2>Adicionar Item</h2>
+                <form id="add-item-form">
+                    <label for="produto">Produto:</label>
+                    <input type="text" id="produto" required>
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" required>
+                    <label for="preco">Preço:</label>
+                    <input type="number" step="0.01" id="preco" required>
+                    <button type="submit">Adicionar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="/js/estoque.js"></script>
+</body>
+</html>

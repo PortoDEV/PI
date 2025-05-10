@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Home - Lanchonete</title>
+</head>
+<body>
+
+    <script>
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Erro ao carregar o sidebar:', error));
+    </script>
+
+
+    <main>
+        <div class="dashboard">
+            <h1 class="title">VISÃO GERAL</h1>
+            <div class="stats">
+                <div class="stat">
+                    <p>Produtos Totais</p>
+                    <h2>100</h2>
+                </div>
+                <div class="stat">
+                    <p>Categorias</p>
+                    <h2>15</h2>
+                </div>
+                <div class="stat">
+                    <p>Movimentações</p>
+                    <h2>10</h2>
+                </div>
+            </div>
+            <div class="recent-movements">
+                <h2>Movimentações Recentes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Data</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hambúrguer</td>
+                            <td>18/04/2025</td>
+                            <td>Entrada</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Queijo</td>
+                            <td>17/04/2025</td>
+                            <td>Saída</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Batata</td>
+                            <td>16/04/2025</td>
+                            <td>Entrada</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="missing-products">
+                <h2>Produtos em Falta</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Molho</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Pão</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="/js/home.js"></script>
+</body>
+</html>

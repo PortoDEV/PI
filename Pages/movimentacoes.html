@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Movimentações</title>
+    <link rel="stylesheet" href="/css/movimentacoes.css">
+</head>
+<body>
+    <div class="container">
+        <h1>HISTÓRICO DE MOVIMENTAÇÕES</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Produto</th>
+                    <th>Tipo</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>18/04/2025</td>
+                    <td>Hambúrguer</td>
+                    <td>Entrada</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>17/04/2025</td>
+                    <td>Queijo</td>
+                    <td>Saída</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>16/04/2025</td>
+                    <td>Batata</td>
+                    <td>Entrada</td>
+                    <td>15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Erro ao carregar o sidebar:', error));
+    </script>
+</body>
+
+</html>
